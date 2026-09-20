@@ -29,6 +29,10 @@ importers:
       typescript:
         specifier: 5.7.3
         version: 5.7.3
+    devDependencies:
+      '@netlify/plugin-nextjs':
+        specifier: ^5.16.0
+        version: 5.16.0
 
 packages:
 
@@ -196,6 +200,10 @@ packages:
     engines: {node: '>=20.9.0'}
     cpu: [x64]
     os: [win32]
+
+  '@netlify/plugin-nextjs@5.16.0':
+    resolution: {integrity: sha512-ys9G34vifslRRy1VwbOMVNFSKU/vuWdNGcYqvAsCAB8VlDFnZDUBM1WUDjDjXOnNXb8kLXA3hX5LgISEONAhAA==}
+    engines: {node: '>=18.0.0'}
 
   '@next/env@15.5.24':
     resolution: {integrity: sha512-mBDF7T0XKZjs9SpUAl0buizVO+O02ULjOvWX8o/AZo/5AGw/UAS1Zzcylmd4pqbftzmKQi+L/nB4jgBYKEAl5Q==}
@@ -489,6 +497,8 @@ snapshots:
 
   '@img/sharp-win32-x64@0.35.4':
     optional: true
+
+  '@netlify/plugin-nextjs@5.16.0': {}
 
   '@next/env@15.5.24': {}
 
