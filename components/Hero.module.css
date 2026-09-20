@@ -1,0 +1,32 @@
+.hero{position:relative;isolation:isolate;min-height:760px;overflow:hidden}
+.foreground,.body{position:relative;z-index:6}
+.body{padding-top:86px;padding-bottom:72px;min-height:540px}
+.headline{position:relative;z-index:2;align-self:start;animation:enter .9s ease-out both}
+.headline h1{font-size:clamp(60px,7.4vw,105px);line-height:1.01;letter-spacing:-.055em}
+.headline em{display:inline-block;transition:text-shadow .35s,transform .35s}
+.atmosphere{position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at var(--light-x,75%) var(--light-y,35%),#00afba12,transparent 48%),radial-gradient(ellipse at 95% 60%,#d9ff000b,transparent 40%)}
+.stars{position:absolute;inset:0;width:100%;height:100%;color:#bbd4d1;opacity:.38;z-index:0;pointer-events:none}
+.stars g{animation:twinkle 11s ease-in-out infinite alternate}
+.planet{position:absolute;z-index:1;width:67%;height:110%;top:-8%;right:-19%;opacity:.43;pointer-events:none;transform:translate(calc(var(--pointer-x,0px) * -0.6),calc(var(--pointer-y,0px) * -0.6));mask-image:linear-gradient(to bottom,transparent,#000 20%,#000 63%,transparent 95%)}
+.planet img{object-fit:contain;height:auto!important;top:50%!important;transform:translateY(-50%);clip-path:ellipse(29.3% 42.8% at 50% 48.8%)}
+.portrait{position:absolute;z-index:3;right:2%;top:98px;bottom:20px;width:44%;pointer-events:none;transform:translate(var(--pointer-x,0px),var(--pointer-y,0px));mask-image:linear-gradient(to bottom,#000 0%,#000 60%,#0009 77%,transparent 100%);animation:portrait-in 1.2s ease-out both}
+.portrait img{object-fit:cover;object-position:center 12%;filter:drop-shadow(-3px 0 7px #00c8d52c) drop-shadow(3px 0 6px #d9ff0029)}
+@media(min-width:701px){.hero{min-height:850px}.body{min-height:650px}.portrait{top:85px;bottom:auto;height:490px;width:40%}.note{align-self:end;max-width:290px;padding-top:0}.note p{font-size:14px}.note:before{inset:-15px -22px;background:radial-gradient(ellipse,#080d0deb 25%,#080d0d99 55%,transparent 78%)}}
+.orbit{position:absolute;z-index:2;width:37%;aspect-ratio:1;right:1%;top:74px;pointer-events:none;color:#9cad9466}
+.orbit svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.orbitLines{transform-origin:200px 200px;animation:orbit 150s linear infinite}
+.orbitPlus{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:300 45px var(--mono);color:var(--lime)}
+.orbit>span:not(.orbitPlus){position:absolute;font:8px var(--mono);letter-spacing:.1em;color:#aab9aa}
+.labelTop{top:6%;left:20%}.labelBottom{bottom:8%;left:12%}.labelSide{right:0;top:55%;line-height:1.8!important}
+.note{position:relative;z-index:5;align-self:end;padding-top:40px;text-shadow:0 1px 12px #080d0d,0 1px 4px #080d0d;animation:enter 1s .12s ease-out both}
+.note:before{content:"";position:absolute;inset:20% -22px -15px;z-index:-1;pointer-events:none;background:radial-gradient(ellipse,#080d0de8 20%,#080d0d88 55%,transparent 75%)}
+.talk{border-bottom:0;position:relative}
+.talk:after{content:"";position:absolute;bottom:0;left:0;width:100%;height:1px;background:var(--lime);transform:scaleX(.3);transform-origin:left;transition:transform .35s}
+.talk:hover:after,.talk:focus-visible:after{transform:scaleX(1)}
+@keyframes orbit{to{transform:rotate(360deg)}}@keyframes twinkle{from{opacity:.5}to{opacity:1}}@keyframes enter{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}@keyframes portrait-in{from{opacity:0}to{opacity:1}}
+@media(hover:hover) and (pointer:fine){.headline em:hover{transform:translateX(2px);text-shadow:0 0 30px #d9ff0025}}
+@media(max-width:1150px){.hero{min-height:700px}.body{min-height:490px;padding-top:70px;padding-bottom:55px}.portrait{right:0;width:46%;top:95px}.note{max-width:210px}.headline h1{font-size:clamp(57px,7.4vw,90px)}}
+@media(max-width:850px){.hero{min-height:650px}.body{min-height:430px;padding-top:55px}.headline h1{font-size:clamp(49px,7.2vw,62px)}.portrait{transform:none;width:44%;right:0;top:120px}.planet{transform:none}.orbit{width:35%;right:3%;top:90px}.orbit>span:not(.orbitPlus){display:none}.orbitLines,.stars g{animation:none}.note{max-width:200px}}
+@media(max-width:700px){.hero{min-height:0}.foreground:first-of-type{gap:15px}.hero :global(.hero-top){font-size:7px;gap:12px}.hero :global(.hero-top)>span:last-child{white-space:nowrap}.body{display:flex;flex-direction:column;align-items:stretch;min-height:620px;padding:42px 0 25px;gap:230px}.headline h1{font-size:clamp(41px,12.6vw,78px)}.portrait{top:260px;bottom:135px;right:-3%;width:92%;max-height:470px;mask-image:linear-gradient(#000 0%,#000 55%,transparent 100%)}.planet{top:190px;right:-37%;width:130%;height:480px;opacity:.3}.orbit{width:64%;top:260px;right:0;opacity:.5}.orbitPlus{font-size:30px}.stars{opacity:.2}.note{margin-top:0;padding-top:0;align-self:start;max-width:285px}.note p{font-size:14px}.note:before{inset:-15px -20px}.hero :global(.hero-bottom){position:relative;z-index:6;gap:20px}.headline,.note,.portrait{animation:none}}
+@media(prefers-reduced-motion:reduce){.orbitLines,.stars g,.headline,.note,.portrait{animation:none!important}.portrait,.planet,.headline em:hover{transform:none!important}.talk:after{transition:none;transform:scaleX(1)}.atmosphere{background:radial-gradient(ellipse at 75% 35%,#00afba12,transparent 48%)}}
+@media(min-width:701px){.hero{min-height:850px}.body{min-height:650px}.portrait{top:85px;bottom:auto;height:clamp(300px,38vw,490px);width:40%}.note{padding-top:0;max-width:290px}}
